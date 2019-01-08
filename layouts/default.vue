@@ -1,106 +1,72 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      v-model="drawer"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-tile
-          v-for="(item, i) in items"
-          :to="item.to"
-          :key="i"
-          router
-          exact
-        >
-          <v-list-tile-action>
-            <v-icon v-html="item.icon" />
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title" />
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'" />
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>remove</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title"/>
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
+  <v-app>
+    <!-- ヘッダ@スクロール後 -->
+    <v-toolbar v-if="navView" :clipped-left="clipped" fixed app class="header-bar">
+      <img src="/img/logo.png" alt="Do's logo" class="logo">
+      <nuxt-link to>
+        <v-toolbar-title v-text="title"/>
+      </nuxt-link>
     </v-toolbar>
-    <v-content>
+
+    <v-content class="content-area">
+      <!-- ヘッダ@スクロール前 -->
+      <catch visible="!navView"></catch>
       <v-container>
-        <nuxt />
+        <nuxt/>
       </v-container>
     </v-content>
-    <v-navigation-drawer
-      :right="right"
-      v-model="rightDrawer"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer
-      :fixed="fixed"
-      app
-    >
-      <span>&copy; 2017</span>
+    <v-footer :fixed="fixed" app>
+      <span>&copy; 2019～</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        clipped: false,
-        drawer: true,
-        fixed: false,
-        items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
-        ],
-        miniVariant: false,
-        right: true,
-        rightDrawer: false,
-        title: 'Vuetify.js'
-      }
+import Catch from '../components/catch'
+
+export default {
+  components: {
+    catch: Catch
+  },
+  data() {
+    return {
+      clipped: false,
+      fixed: false,
+      items: [
+        { icon: 'apps', title: 'Welcome', to: '/' },
+        { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
+      ],
+      miniVariant: false,
+      right: true,
+      title: 'DoersSquare',
+
+      //  追加分  ------------
+      scrollY: 0
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      this.scrollY = window.scrollY
+    }
+  },
+  computed: {
+    navView: function() {
+      return this.scrollY > 300 - 56
     }
   }
+}
 </script>
+
+<style lang="sass">
+
+// 定義    ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+$HEADER-COLOR: #17224c
+$BACKGROUND-COLOR: #FFFFFF
+
+$TEXT-COLOR: #17224c
+$DARK-TEXT-COLOR: #FFFFFF
+
+</style>
