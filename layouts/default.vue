@@ -54,7 +54,7 @@ export default {
   },
   computed: {
     navView: function() {
-      return this.scrollY > 300 - 56
+      return this.scrollY > 300 - 48
     }
   }
 }

@@ -24,8 +24,10 @@ export default {
 .catch 
   background-color: #17224c
   width: 100%
-  min-height: 300px
-  padding-top: 55px
+  min-height: 400px
+  height:   400px
+  margin-top:  -100px
+  padding-top: 155px
   color: #ffffff
   .biz-name
     vertical-align: super
@@ -34,5 +36,22 @@ export default {
 
 .logo
     width: 75px
+
+
+@media screen and (min-width:0px) and ( max-width:480px)
+    .catch
+        padding-top: 205px
+        .biz-name
+            font-size: 40px
+        .logo
+            height: auto
+            width: 60px
+        .catch-copy
+            font-size: 20px !important
+
+@media screen and (min-width:480px) and ( max-width:1024px) 
+
+@media screen and (min-width:1024px)
+
 
 </style>
