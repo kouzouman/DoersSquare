@@ -1,12 +1,27 @@
 <template>
   <v-app>
     <!-- ヘッダ@スクロール後 -->
-    <v-toolbar v-if="navView" :clipped-left="clipped" fixed app class="header-bar">
+    <v-toolbar
+      v-if="navView"
+      :clipped-left="clipped"
+      fixed
+      app
+      class="header-bar"
+      :class="{'header-dummy':!navView}"
+    >
       <img src="/img/logo.png" alt="Do's logo" class="logo">
       <nuxt-link to>
         <v-toolbar-title v-text="title"/>
       </nuxt-link>
     </v-toolbar>
+
+    <v-toolbar
+      v-if="!navView"
+      fixed
+      app
+      class="header-bar header-dummy"
+      style="background-color: rgba(0,0,0,0) !important;"
+    ></v-toolbar>
 
     <v-content class="content-area">
       <!-- ヘッダ@スクロール前 -->
@@ -54,7 +69,8 @@ export default {
   },
   computed: {
     navView: function() {
-      return this.scrollY > 300 - 48
+      console.log(this.scrollY > 300 - 100 + 44)
+      return this.scrollY > 300 - 100 + 44
     }
   }
 }
