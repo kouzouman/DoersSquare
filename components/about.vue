@@ -6,6 +6,19 @@ export default {}
 
 
 <template>
+  <section class="area-block">
+    <div class="left-line">
+      <h3 class="headline mb-0">About Me</h3>
+      <div>
+        <p>サンプル文字列サンプル文字列サンプル文字列サンプル文字列サンプル文字列
+          <br>サンプル文字列サンプル文字列サンプル文字列サンプル文字列サンプル文字列サンプル文字列
+          <br>サンプル文字列サンプル文字列サンプル文字列
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
   <v-card class="content-panel">
     <v-card-title primary-title>
       <div>
@@ -18,13 +31,7 @@ export default {}
         </div>
       </div>
     </v-card-title>
-    <!-- 
-    <v-card-actions>
-      <v-btn flat color="orange">Share</v-btn>
-      <v-btn flat color="orange">Explore</v-btn>
-    </v-card-actions>
-    -->
-  </v-card>
+  </v-card>-->
 </template>
 
 <style lang="sass" scoped>
