@@ -3,7 +3,7 @@
     <div class="left-line">
       <h3 class="headline mb-2">Contact</h3>
       <div>
-        <form name="contact" method="POST" data-netlify="true" action="/">
+        <form name="contact" method="POST" netlify data-netlify="true" action="/">
           <p>
             <label>Your Name:
               <v-text-field name="name"></v-text-field>
