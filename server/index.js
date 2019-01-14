@@ -2,9 +2,13 @@ const Koa = require('koa')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 
+const auth = require('koa-basic-auth')
+
 const app = new Koa()
 const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3333
+
+app.use(auth({ name: 'name', pass: 'pass' }))
 
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
