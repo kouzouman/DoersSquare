@@ -8,30 +8,19 @@ export default {}
 <template>
   <section class="area-block">
     <div class="left-line">
-      <h3 class="headline mb-0">About Me</h3>
+      <h3 class="headline mb-2">About Me</h3>
       <div>
-        <p>サンプル文字列サンプル文字列サンプル文字列サンプル文字列サンプル文字列
-          <br>サンプル文字列サンプル文字列サンプル文字列サンプル文字列サンプル文字列サンプル文字列
-          <br>サンプル文字列サンプル文字列サンプル文字列
+        <p>神戸生まれ神戸育ちのITエンジニア。
+          <br>修士課程修了し、いくつかの会社で様々な業務システム作成に携わった後に独立しました。
+          <br>Webシステムのサーバ構築を含む、アプリケーションの設計、製造、テスト、リリース、保守/運営まですべてが可能です。
+          <br>さらに、初級・中級開発者を次の段階へ引き上げるための講師も実施しています。
+        </p>
+        <p>旅行と写真が趣味で、長期休みが取れればどこぞへでかけております。
+          <br>もうすぐ長男が誕生予定！
         </p>
       </div>
     </div>
   </section>
-
-  <!-- 
-  <v-card class="content-panel">
-    <v-card-title primary-title>
-      <div>
-        <h3 class="headline mb-0">About Me</h3>
-        <div>
-          <p>Do'sは、神戸市を拠点として活動しているフリーランスのITエンジニアです。
-            <br>ご訪問でのお打ち合わせは、兵庫県、大阪府、京都府の一部とさせていただいております。
-            <br>他府県の場合は、オンラインにて承り致します。
-          </p>
-        </div>
-      </div>
-    </v-card-title>
-  </v-card>-->
 </template>
 
 <style lang="sass" scoped>
