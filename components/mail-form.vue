@@ -80,6 +80,7 @@ export default {
   },
   methods: {
     onSubmit() {
+      console.log('form-submit')
       const params = new URLSearchParams()
 
       params.append('form-name', 'contact') // Forms使うのに必要
