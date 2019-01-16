@@ -40,5 +40,5 @@ export default {
 
 <style lang="sass" scoped>
 .under
-  height:200px
+  height : 200px
 </style>
