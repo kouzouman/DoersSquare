@@ -22,9 +22,7 @@
 import About from '../components/about'
 import CorrespondingArea from '../components/corresponding-area'
 import Profile from '../components/profile'
-
 import MailForm from '../components/mail-form'
-
 import FadeIn from '../components/slot/fadein'
 
 export default {

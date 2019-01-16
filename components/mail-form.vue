@@ -5,11 +5,29 @@
 
       <div>
         <form v-if="isSubmit === false" @submit.prevent="onSubmit">
-          <input type="text" v-model="name" name="name">
+          <!-- <input type="text" v-model="name" name="name">
           <input type="email" v-model="email" name="email">
           <textarea v-model="content" name="content"></textarea>
-          
-          <button type="submit">送信</button>
+          <button type="submit">送信</button>-->
+          <p>
+            <label>お名前:
+              <v-text-field name="name"></v-text-field>
+            </label>
+          </p>
+          <p>
+            <label>メールアドレス:
+              <v-text-field name="email"></v-text-field>
+            </label>
+          </p>
+          <p>
+            <label>ご用件:
+              <v-textarea name="message"></v-textarea>
+            </label>
+          </p>
+          <!-- <div data-netlify-recaptcha="true"></div> -->
+          <p>
+            <v-btn type="submit">送信</v-btn>
+          </p>
         </form>
 
         <div v-if="isSubmit === true">
