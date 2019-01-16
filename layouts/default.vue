@@ -33,6 +33,15 @@
     <v-footer :fixed="fixed" app>
       <span>&copy; 2019～</span>
     </v-footer>
+
+    <section style="display:none">
+      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="contact">
+        <input type="text" name="name">
+        <input type="email" name="email">
+        <textarea name="content"></textarea>
+      </form>
+    </section>
   </v-app>
 </template>
 

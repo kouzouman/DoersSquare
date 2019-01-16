@@ -12,6 +12,7 @@
     <fadein>
       <mail-form></mail-form>
     </fadein>
+    <div class="under"></div>
   </v-layout>
 
   <!-- <section></section> -->
@@ -36,3 +37,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.under
+  height:200px
+</style>
