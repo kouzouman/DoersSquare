@@ -80,9 +80,17 @@ export default {
 
       params.append('form-name', 'contact') // Forms使うのに必要
 
+      console.log({
+        name: this.name,
+        email: this.email,
+        content: this.content,
+        chkUnrobot: this.chkUnrobot
+      })
+
       params.append('name', this.name)
       params.append('email', this.email)
       params.append('content', this.content)
+      // params.append('chkRobot', this.chkUnrobot)
 
       console.log(params)
 
