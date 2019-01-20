@@ -84,6 +84,8 @@ export default {
       params.append('email', this.email)
       params.append('content', this.content)
 
+      console.log(params)
+
       axios.post('/', params).then(() => {
         this.isSubmit = 'OK'
       })
