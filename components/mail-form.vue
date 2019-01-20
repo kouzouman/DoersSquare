@@ -7,17 +7,17 @@
         <form v-if="isSubmit === ''" @submit.prevent="onSubmit">
           <p>
             <label>お名前:
-              <v-text-field name="name"></v-text-field>
+              <v-text-field name="name" v-model="name"></v-text-field>
             </label>
           </p>
           <p>
             <label>メールアドレス:
-              <v-text-field name="email"></v-text-field>
+              <v-text-field name="email" v-model="email"></v-text-field>
             </label>
           </p>
           <p>
             <label>ご用件:
-              <v-textarea name="message"></v-textarea>
+              <v-textarea name="message" v-model="content"></v-textarea>
             </label>
           </p>
           <!-- <div data-netlify-recaptcha="true"></div> -->
