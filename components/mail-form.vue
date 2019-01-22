@@ -23,6 +23,9 @@
           <!-- <div data-netlify-recaptcha="true"></div> -->
           <p>
             <v-checkbox :label="`私はロボットではありません`" @click="checkUnrobot" v-model="chkUnrobot"></v-checkbox>
+            <span class="hd">
+              <input type="checkbox" v-model="dcheck">
+            </span>
             <v-btn type="submit">送信</v-btn>
           </p>
         </form>
@@ -35,7 +38,7 @@
         </div>
         <div v-if="isSubmit === 'NG'">
           <p>メッセージの投稿ありがとうございます。
-            <br>しかし、申し訳ありません。ロボットであるかどうかの確認が取れなかったため送信できませんでした。
+            <br>しかし、申し訳ありません。ロボットでない確認が取れなかったため送信できませんでした。
             <br>操作をゆっくりにして、もう一度投稿いただけませんでしょうか。
             <br>よろしくおねがいします。
           </p>
@@ -54,19 +57,24 @@ export default {
       name: '',
       email: '',
       content: '',
+      viewStartTime: new Date(),
       unrobotCheckTime: null,
       chkUnrobot: false,
+      dcheck: false,
       isSubmit: ''
     }
   },
   methods: {
     checkUnrobot() {
-      this.unrobotCheckTime = new Date()
+      const viewedTime = new Date() - this.viewStartTime
+      if (viewedTime > 1500) {
+        this.unrobotCheckTime = new Date()
+      }
       this.chkUnrobot = true
     },
     onSubmit() {
       console.log('form-submit')
-      if (this.unrobotCheckTime == null) {
+      if (this.dcheck || this.unrobotCheckTime == null) {
         this.isSubmit = 'NG'
         return
       }
@@ -101,3 +109,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.hd {
+  display: none;
+}
+</style>
