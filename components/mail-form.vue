@@ -43,6 +43,12 @@
             <br>よろしくおねがいします。
           </p>
         </div>
+        <div v-if="isSubmit === 'NJPN'">
+          <p>メッセージの投稿ありがとうございます。
+            <br>しかし、申し訳ありません。現在日本語によるメッセージのみを受け付けております。
+            <br>お送りいただいた内容は受信できません。
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -74,6 +80,12 @@ export default {
     },
     onSubmit() {
       console.log('form-submit')
+
+      if (!this.content.match(/[亜-熙ぁ-んァ-ヶ]/)) {
+        this.isSubmit = 'NJPN'
+        return
+      }
+
       if (this.dcheck || this.unrobotCheckTime == null) {
         this.isSubmit = 'NG'
         return
