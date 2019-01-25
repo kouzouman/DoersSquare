@@ -36,7 +36,7 @@
 
     <section class="dummy-form">
       <form name="contact" action="/test" netlify netlify-honeypot="bot-field" hidden>
-        <input type="hidden" name="form-name" value="contact">
+        <!-- <input type="hidden" name="form-name" value="contact"> -->
         <input type="text" name="name">
         <input type="email" name="email">
         <textarea name="content"></textarea>
