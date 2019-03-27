@@ -26,7 +26,7 @@
             <span class="hd">
               <input type="checkbox" v-model="dcheck">
             </span>
-            <v-btn type="submit">送信</v-btn>
+            <v-btn color="info" type="submit">送信</v-btn>
           </p>
         </form>
 
